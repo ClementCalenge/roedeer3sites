@@ -1,0 +1,13 @@
+Package: roedeer3sites
+Type: Package
+Encoding: UTF-8
+Title: Habitat Selection by the Roe Deer in three French Study Sites
+Version: 1.0
+Date: 2015-02-20
+Depends: R (>= 2.10.0), sp, splancs, rjags
+Suggests: coda
+Author: Clement Calenge
+Maintainer: Clement Calenge <clement.calenge@oncfs.gouv.fr>
+Description: Companion package to the article by Gaudry et al. on 
+             habitat selection by the roe deer in three Study sites.
+License: GPL (>= 2)

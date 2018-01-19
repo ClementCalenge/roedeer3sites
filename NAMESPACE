@@ -1,0 +1,7 @@
+importFrom("grDevices", "rgb")
+importFrom("graphics", "arrows", "box", "image", "par", "points",
+           "segments", "text")
+importFrom("stats", "rmultinom", "rnorm")
+importFrom("utils", "capture.output", "object.size")
+import(sp, splancs,rjags)
+exportPattern("^[[:alpha:]]+")
