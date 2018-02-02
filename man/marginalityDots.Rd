@@ -83,7 +83,7 @@ cor2 <- do.call(rbind, coefficientsModel2)
 r <- lapply(1:nrow(cor2), function(x) {
 
         ## progress bar
-        cat(round(100*x/nrow(cor2)),"%\r")
+        cat(round(100*x/nrow(cor2)),"%\\r")
 
         ## the vector of coefficients simulated at step x
         coef <- cor2[x,]
@@ -170,6 +170,43 @@ tmp <- sapply(1:8, function(i) {
                         main=la[[s]][i])
     })
 })
+
+
+
+####################################################
+##
+## 5. If required, you can explore this distribution for
+##    any animal in the data set with the following code
+
+## Delete last graphics
+dev.off()
+
+## Remember the name of the animals
+row.names(HS3sites$hr)
+
+## We take the example of X1_lpp, but you can set this value
+## to any animal you wish
+focusAnimal <- "X1_lpp"
+
+## What is available to this animal?
+di <- unlist(availhr[which(row.names(HS3sites$hr)==focusAnimal),])
+
+## What is expected to be used (extracts the data from the
+## object "r" created above
+u <- do.call(rbind,lapply(r, function(x) {
+             x[which(row.names(HS3sites$hr)==focusAnimal),]
+})) 
+
+
+## Plots the posterior distribution.
+## Again, note that we found clearer to define the scrubs as
+## the lower side of the triangle on figure 3 of the paper, so that we
+## reordered the columns.  We do the same in this example:
+marginalityDots(di[c(3,1,2)], u[,c(3,1,2)], main=focusAnimal)
+
+
+
+
 
 
 }
