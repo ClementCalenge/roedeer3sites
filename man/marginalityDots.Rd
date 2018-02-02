@@ -197,7 +197,6 @@ u <- do.call(rbind,lapply(r, function(x) {
              x[which(row.names(HS3sites$hr)==focusAnimal),]
 })) 
 
-
 ## Plots the posterior distribution.
 ## Again, note that we found clearer to define the scrubs as
 ## the lower side of the triangle on figure 3 of the paper, so that we
