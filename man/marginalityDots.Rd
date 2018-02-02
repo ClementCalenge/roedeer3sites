@@ -83,7 +83,11 @@ cor2 <- do.call(rbind, coefficientsModel2)
 r <- lapply(1:nrow(cor2), function(x) {
 
         ## progress bar
-        cat(round(100*x/nrow(cor2)),"%\\r")
+        if (x\%in\%round(c(((1:50)*2)/100)*nrow(cor2))) {
+           cat("=")
+        }
+        if (x==nrow(cor2))
+           cat("\n")
 
         ## the vector of coefficients simulated at step x
         coef <- cor2[x,]
